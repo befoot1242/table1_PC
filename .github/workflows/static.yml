@@ -40,16 +40,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Python
-        run: python reload.py
-
-      - name: Generate updated content
-        run: |
-          date > update_time.txt
-          echo "<!DOCTYPE html>" > index.html
-          echo "<html lang='en'>" >> index.html
-          echo "<head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>My Static Page</title></head>" >> index.html
-          echo "<body><h1>Hello, World!</h1><p>Last updated: $(cat update_time.txt)</p></body></html>" >> index.html
-
+        run: python reload.py > index.html
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
