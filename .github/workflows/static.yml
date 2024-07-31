@@ -44,6 +44,8 @@ jobs:
           echo "<body><h1>Hello, World!</h1><p>Last updated: $(cat update_time.txt)</p></body></html>" >> index.html
 
       - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'befoot1242'
           git config --global user.email 'ushikoshi12@gmail.com'
