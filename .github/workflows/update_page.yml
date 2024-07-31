@@ -22,8 +22,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'befoot1242'
+          git config --global user.email 'uchikoshi12@gmail.com'
           git add .
           git commit -m "Update static page content"
           git push
