@@ -50,7 +50,6 @@ jobs:
           git add .
           git commit -m "Update static page content"
           git push
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
