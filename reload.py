@@ -10,7 +10,7 @@ for i in range(1,len(results)):
 out += "        // 他のデータ...\n"
 out += "    ];\n"
 out += "    // DataTableの初期化\n"
-out += "debugger;"
+#out += "debugger;"
 out += "    $('#example').DataTable({\n"
 out += "        data: jsonData,\n"
 out += "        columns: [\n"
