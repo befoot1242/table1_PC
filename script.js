@@ -24,7 +24,7 @@ var jsonData = [
         // 他のデータ...
     ];
     // DataTableの初期化
-debugger;    $('#example').DataTable({
+    $('#example').DataTable({
         data: jsonData,
         columns: [
             { title: "Column" },
