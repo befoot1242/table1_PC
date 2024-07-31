@@ -9,7 +9,7 @@ out = "<tbody>"
 for ar in results:
     row = "<tr>"
     for td in ar:
-        row += "<td>" + td + "</td>"
+        row += "<td>" + str(td) + "</td>"
     row = "</tr>\n"
 out += "</tbody>"
 
