@@ -7,11 +7,12 @@ var jsonData = [
     $('#example').DataTable({
         data: jsonData,
         columns: [
-            { title: "Column A" },
-            { title: "Column B" },
-            { title: "Column C" },
-            { title: "Column D" },
-            { title: "Column E" }
+            { title: "Column" },
+            { title: "バサラ大将" },
+            { title: "坂本" },
+            { title: "尊敬ラーメン屋" },
+            { title: "ゆっけ" }
+            { title: "voter" }
         ]
     });
 });
