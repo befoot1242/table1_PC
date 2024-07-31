@@ -11,7 +11,7 @@ var jsonData = [
             { title: "バサラ大将" },
             { title: "坂本" },
             { title: "尊敬ラーメン屋" },
-            { title: "ゆっけ" }
+            { title: "ゆっけ" },
             { title: "voter" }
         ]
     });
