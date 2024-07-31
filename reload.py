@@ -24,7 +24,7 @@ out = '$(document).ready(function() {\n' + '// JSONデータ\n' + 'var jsonData 
 out += str(results[0])
 for i in range(1,len(results)):
     out += "," + str(results[i])
-out += "        // 他のデータ...\n"+"    ];\n"+"    // DataTableの初期化\n"+"    $('#example').DataTable({\n"+"        data: jsonData,\n"+"        columns: [\n"+"            { title: \"Column A\" },\n"+"            { title: \"Column B\" },\n"+"            { title: \"Column C\" },\n"+"            { title: \"Column D\" },\n"+"            { title: \"Column E\" }\n"+"        ]\n"+"    });\n"+"});\n"
+out += "        // 他のデータ...\n"+"    ];\n"+"    // DataTableの初期化\n"+"    $('#example').DataTable({\n"+"        data: jsonData,\n"+"        columns: [\n"+"            { title: \"Column\" },\n"+"            { title: \"バサラ大将\" },\n"+"            { title: \"坂本\" },\n"+"            { title: \"尊敬ラーメン屋\" },\n"+"            { title: \"ゆっけ\" }\n"+"            { title: \"voter\" }\n"+"        ]\n"+"    });\n"+"});\n"
 
 
 print(out)
