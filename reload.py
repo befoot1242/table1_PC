@@ -5,7 +5,7 @@ with open('results.json', 'r', encoding='utf-8') as file:
     results = json.load(file)
 
 out = ""
-out += str(time.time()) + '\n'
+out += "// " + str(time.time()) + '\n'
 out += '$(document).ready(function() {\n' + '// JSONデータ\n' + 'var jsonData = [\n'
 out += str(results[0])
 for i in range(1,len(results)):
