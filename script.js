@@ -1,4 +1,4 @@
-1722509001.667502
+1722509410.496373
 $(document).ready(function() {
 // JSONデータ
 var jsonData = [
@@ -44,7 +44,8 @@ var jsonData = [
     // DataTableの初期化
     $('#example').DataTable({
         data: jsonData,
-        displayLength: 100,
+        displayLength: 101,
+        order: [ [ 1, "asc" ] ],
         columns: [
             { title: "Column" },
             { title: "バサラ大将" },
