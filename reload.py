@@ -16,7 +16,8 @@ out += "    // DataTableの初期化\n"
 #out += "debugger;"
 out += "    $('#example').DataTable({\n"
 out += "        data: jsonData,\n"
-out += "        displayLength: 100,\n"
+out += "        displayLength: 101,\n"
+out += "        order: [ [ 1, \"asc\" ] ],\n"
 out += "        columns: [\n"
 out += "            { title: \"Column\" },\n"
 out += "            { title: \"バサラ大将\" },\n"
@@ -27,6 +28,5 @@ out += "            { title: \"voter\" }\n"
 out += "        ]\n"
 out += "    });\n"
 out += "});\n"
-
 
 print(out)
