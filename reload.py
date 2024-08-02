@@ -4,14 +4,6 @@ import time
 with open('results.json', 'r', encoding='utf-8') as file:
     results = json.load(file)
 
-m = {}
-#map(lambda x: m[(x[1],x[2],x[3],x[4])].append(x[5]), results)
-for x in results:
-    if (x[0],x[1],x[2],x[3],x[4]) not in m.keys():
-        m[(x[0],x[1],x[2],x[3],x[4])] = [x[5]]
-    else:
-        m[(x[0],x[1],x[2],x[3],x[4])].append(x[5])
-
 out = ""
 out += "// " + str(time.time()) + '\n'
 out += '$(document).ready(function() {\n' + '// JSONデータ\n' + 'var jsonData = [\n'
