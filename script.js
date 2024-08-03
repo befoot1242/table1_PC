@@ -1,4 +1,4 @@
-// 1722651364.6639686
+// 1722651498.8669362
 $(document).ready(function() {
 // JSONデータ
 var jsonData = [
@@ -88,7 +88,7 @@ var jsonData = [
     // DataTableの初期化
     $('#example').DataTable({
         data: jsonData,
-        scrollY: 70vh,
+        scrollY: "70vh",
         displayLength: 101,
         order: [ [ 0, "desc" ] ],
         columns: [
