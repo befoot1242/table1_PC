@@ -46,7 +46,6 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'befoot1242'
-          git config --global user.email 'ushikoshi12@gmail.com'
           git add .
           git commit -m "Update static page content"
           git push
