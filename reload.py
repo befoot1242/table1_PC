@@ -7,13 +7,12 @@ with open('results.json', 'r', encoding='utf-8') as file:
 out = ""
 out += "// " + str(time.time()) + '\n'
 out += '$(document).ready(function() {\n' + '// JSONデータ\n' + 'var jsonData = [\n'
-out += str(results[0])
+out += str(results[0]) + '\n'
 for i in range(1,len(results)):
     out += "," + str(results[i]) + '\n'
 out += "        // 他のデータ...\n"
 out += "    ];\n"
 out += "    // DataTableの初期化\n"
-#out += "debugger;"
 out += "    $('#example').DataTable({\n"
 out += "        data: jsonData,\n"
 out += "        scrollY: \"70vh\",\n"
