@@ -1,4 +1,4 @@
-// 1723287312.4800704
+// 1723287504.243215
 $(document).ready(function() {
 // JSONデータ
 var jsonData = [
@@ -261,7 +261,8 @@ var jsonData = [
     ];
     // DataTableの初期化
     $('#example').DataTable({
-        data: jsonData,
+        //data: jsonData,
+        ajax: { url: "https://befoot1242.github.io/table1/results.json", dataSrc: '' },
         scrollY: "70vh",
         displayLength: 101,
         order: [ [ 0, "desc" ] ],
