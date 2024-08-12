@@ -12,7 +12,6 @@ const functionName = () => {
 
         if ((prevCell && currentCell.innerText === prevCell.innerText) ||
             (nextCell && currentCell.innerText === nextCell.innerText)) {
-            //currentCell.classList.add("highlight");
             currentCell.style.backgroundColor = "yellow";
         }
     }
@@ -35,8 +34,8 @@ $(document).ready(function() {
             { title: "ゆっけ" },    
             { title: "voter" }
         ],
-        initComplete:function(settings) {
-            functionName(); // テーブル描画後に関数を呼び出す
+        initComplete:function() {
+            functionName();
         }
     });
 });
