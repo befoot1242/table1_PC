@@ -38,4 +38,25 @@ $(document).ready(function() {
             functionName();
         }
     });
+
+    fetch('https://befoot1242.github.io/table1/teamResults.json')
+        .then(response => response.json())
+        .then(data => {
+            let ar = []
+            Object.keys(data).forEach((value,index,arr) => ar.push([data[value],value]));
+            ar.sort((a, b) => b[0] - a[0]);
+            ar.forEach((data,index) => {
+                let newParagraph = document.createElement("p");
+                newParagraph.textContent = `${index+1} ${data[0]} ${data[1]}`;
+                var target = document.querySelector(".modal-content");
+                target.appendChild(newParagraph);
+            });
+        })
+        .catch(error => console.error('Error:', error)); // エラー処理
+});
+// モーダル背景をクリックしたときにモーダルを閉じる
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('clickArea').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+  });
 });
