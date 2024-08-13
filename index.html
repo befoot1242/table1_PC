@@ -20,7 +20,7 @@
         /* 初期状態では非表示 */
         justify-content: center;
         align-items: center;
-        z-index: 10;
+        z-index: 0;
     }
 
     .modal-content {
@@ -33,7 +33,7 @@
 
     #clickArea {
         position: absolute;
-        z-index: 11;
+        z-index: 0;
     }
 </style>
 
@@ -46,9 +46,9 @@
         </div>
     </div>
     <div id="clickArea" style="height: 100%; width: 100%;"></div>
-    <h3>上が最新</h3>
-    <h3 style="background-color:yellow;">黄色いところは同一セッションで複数投票あったとこだから、信用できない</h3>
-    <table id="example" class="display" style="width:100%">
+    <div>上が最新</div>
+    <div style="background-color:yellow;">黄色いところは同一セッションで複数投票あったとこだから、信用できない</div>
+    <table id="example" class="display" style="width:100%;height:50%">
         <thead>
             <tr>
                 <th>Column </th>
