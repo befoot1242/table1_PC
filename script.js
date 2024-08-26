@@ -47,7 +47,7 @@ $(document).ready(function() {
             ar.forEach((data,index) => {
                 let newParagraph = document.createElement("p");
                 newParagraph.textContent = `${index+1} ${data[0]} ${data[1]}`;
-                var target = document.querySelector(".modal-content");
+                var target = document.querySelector(".modal-content2");
                 target.appendChild(newParagraph);
             });
         })
@@ -55,17 +55,5 @@ $(document).ready(function() {
 });
 // モーダル背景をクリックしたときにモーダルを閉じる
 document.addEventListener('DOMContentLoaded', function() {
-    // document.getElementById('teams').addEventListener('click', function() {
-    //     document.getElementById('modal').style.display = 'flex';
-    //     // document.getElementById('modal').style.zIndex = 11;
-    //     // document.getElementById('example_wrapper').style.zIndex = -10;
-    //     document.getElementById('clickArea').style.zIndex = 10;
-    // });
-    // document.getElementById('clickArea').addEventListener('click', function() {
-    //     document.getElementById('modal').style.display = 'none';
-    //     // document.getElementById('modal').style.zIndex = -11;
-    //     // document.getElementById('example_wrapper').style.zIndex = 10;
-    //     document.getElementById('clickArea').style.zIndex = -10;
-    // });
 });
 
