@@ -53,7 +53,6 @@ $(document).ready(function() {
         })
         .catch(error => console.error('Error:', error)); // エラー処理
 });
-// モーダル背景をクリックしたときにモーダルを閉じる
 document.addEventListener('DOMContentLoaded', function() {
 });
 
