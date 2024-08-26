@@ -57,10 +57,13 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('clickArea').addEventListener('click', function() {
     document.getElementById('modal').style.display = 'none';
+    document.getElementById('modal').style.zIndex = -10;
+    document.getElementById('clickArea').style.zIndex = -10;
   });
 });
 
 function tmp(){
-        document.getElementById('modal').style.display = 'flex';
-        document.getElementsByTagName('tbody').style.zindex = -10;
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('example_wrapper').style.zIndex = -10;
+    document.getElementById('clickArea').style.zIndex = 10;
 };
