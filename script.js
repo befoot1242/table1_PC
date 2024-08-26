@@ -46,7 +46,7 @@ $(document).ready(function() {
             ar.sort((a, b) => b[0] - a[0]);
             ar.forEach((data,index) => {
                 let newParagraph = document.createElement("p");
-                newParagraph.textContent = `${index+1} ${data[0]} ${data[1]}`;
+                newParagraph.textContent = `${index+1}位 ${data[0]} ${data[1]}`;
                 var target = document.querySelector(".modal-content2");
                 target.appendChild(newParagraph);
             });
