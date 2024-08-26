@@ -31,7 +31,7 @@
         overflow-y: auto;
     }
 
-    .example {
+    tbody {
         z-index: -10;
     }
 
@@ -42,7 +42,7 @@
 </style>
 
 <body>
-    <h2 id="teams" onClick="document.getElementById('modal').style.display = 'flex';">
+    <h2 id="teams" onClick="() => {document.getElementById('modal').style.display = 'flex';}">
         順位
     </h2>
     <div id="modal" class="modal">
