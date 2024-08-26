@@ -32,17 +32,17 @@
     }
 
     tbody {
-        z-index: -10;
+        z-index: 10;
     }
 
     #clickArea {
         position: absolute;
-        z-index: 0;
+        z-index: -1;
     }
 </style>
 
 <body>
-    <h2 id="teams" onClick="() => {document.getElementById('modal').style.display = 'flex';}">
+    <h2 id="teams" onClick="tmp()">
         順位
     </h2>
     <div id="modal" class="modal">

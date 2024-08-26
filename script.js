@@ -3,7 +3,6 @@ const functionName = () => {
     const table = document.querySelector("tbody");
     const rows = table.rows;
     const columnIndex = 0;
-    debugger;
 
     for (let i = 0; i < rows.length; i++) {
         const currentCell = rows[i].cells[columnIndex];
@@ -60,3 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('modal').style.display = 'none';
   });
 });
+
+function tmp(){
+        document.getElementById('modal').style.display = 'flex';
+        document.getElementsByTagName('tbody').style.zindex = -10;
+};
