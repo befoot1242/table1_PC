@@ -25,6 +25,8 @@ $(document).ready(function() {
         scrollY: "70vh",
         displayLength: 101,
         order: [ [ 0, "desc" ] ],
+        searching: false,
+        lengthChange: false,
         columns: [
             { title: "Column" },
             { title: "バサラ大将" },
