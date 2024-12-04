@@ -1,142 +1,91 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas with Custom Validation</title>
+    <title>Canvas with Custom Font</title>
     <style>
         .container {
             position: relative;
             display: inline-block;
         }
-
         canvas {
             position: absolute;
             top: 0;
             left: 0;
         }
-
         img {
             display: block;
             width: 494px;
             height: 650px;
         }
-
-        .tooltip {
-            position: absolute;
-            background-color: #f44336;
-            color: #fff;
-            padding: 5px;
-            border-radius: 4px;
-            font-size: 12px;
-            display: none;
-        }
     </style>
 </head>
-
 <body>
     <div class="inputs">
         <textarea id="text1" rows="4" cols="20" placeholder="Text 1" style="width:250px;"></textarea>
         <textarea id="text2" rows="4" cols="20" placeholder="Text 2" style="width:250px;"></textarea>
         <textarea id="text3" rows="4" cols="20" placeholder="Text 3" style="width:250px;"></textarea>
         <textarea id="text4" rows="4" cols="20" placeholder="Text 4" style="width:250px;"></textarea>
+        <button id="drawButton">Draw Text on Canvas</button>
     </div>
 
     <div class="container">
         <img id="myImage" src="t_00087_3.png" alt="Sample Image">
         <canvas id="myCanvas"></canvas>
-        <div id="tooltip" class="tooltip"></div>
     </div>
 
     <script>
         const image = document.getElementById('myImage');
         const canvas = document.getElementById('myCanvas');
         const ctx = canvas.getContext('2d');
-        const tooltip = document.getElementById('tooltip');
 
-        // 各テキストエリアごとのバリデーションルールを定義
-        const validationRules = {
-            text1: { maxLines: 2, maxCharsPerLine: 12 },
-            text2: { maxLines: 8, maxCharsPerLine: 8 },
-            text3: { maxLines: 3, maxCharsPerLine: 18 },
-            text4: { maxLines: 1, maxCharsPerLine: 12 }
-        };
-
-        function drawCanvas() {
-            // 画像をキャンバスに描画
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-            // 各テキストエリアの値を取得し、描画
-            const textData = [
-                { id: 'text1', x: 45, y: 150, font: "bold 35px Arial", color: "red", lineHeight: 50 },
-                { id: 'text2', x: 30, y: 270, font: "bold 20px Arial", color: "blue", lineHeight: 25 },
-                { id: 'text3', x: 130, y: 567, font: "bold 18px Arial", color: "black", lineHeight: 19 },
-                { id: 'text4', x: 40, y: 630, font: "bold 18px Arial", color: "black", lineHeight: 19 }
-            ];
-
-            textData.forEach(({ id, x, y, font, color, lineHeight }) => {
-                const text = document.getElementById(id).value;
-                const lines = text.split("\n");
-                if (!validateText(id, lines)) return;
-
-                ctx.font = font;
-                ctx.fillStyle = color;
-                lines.forEach((line, i) => {
-                    ctx.fillText(line, x, y + i * lineHeight);
-                });
-            });
-        }
-
-        function validateText(id, lines) {
-            const { maxLines, maxCharsPerLine } = validationRules[id];
-            if (lines.length > maxLines) {
-                showTooltip(`「${id}」の最大行数は${maxLines}行です`, id);
-                return false;
-            }
-            for (let line of lines) {
-                if (line.length > maxCharsPerLine) {
-                    showTooltip(`「${id}」の1行あたり最大文字数は${maxCharsPerLine}文字です`, id);
-                    return false;
-                }
-            }
-            hideTooltip();
-            return true;
-        }
-
-        function showTooltip(message, id) {
-            const textarea = document.getElementById(id);
-            const rect = textarea.getBoundingClientRect();
-
-            tooltip.textContent = message;
-            tooltip.style.left = `${rect.left}px`;
-            tooltip.style.top = `${rect.bottom + window.scrollY}px`;
-            tooltip.style.display = 'block';
-        }
-
-        function hideTooltip() {
-            tooltip.style.display = 'none';
-        }
-
-        image.onload = function () {
+        image.onload = function() {
             // 画像のサイズに合わせてキャンバスのサイズを設定
             canvas.width = image.width;
             canvas.height = image.height;
 
-            // 初回描画
-            drawCanvas();
+            // ボタンがクリックされたときにテキストを描画する
+            document.getElementById('drawButton').onclick = function() {
+                // 画像をキャンバスに描画
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-            // 各テキストエリアにイベントリスナーを追加
-            Object.keys(validationRules).forEach(id => {
-                const textarea = document.getElementById(id);
-                textarea.addEventListener('input', () => {
-                    const lines = textarea.value.split("\n");
-                    if (validateText(id, lines)) drawCanvas();
-                });
-            });
-        };
+                // テキストエリアの値を取得
+                const text1 = document.getElementById('text1').value;
+                const text2 = document.getElementById('text2').value;
+                const text3 = document.getElementById('text3').value;
+                const text4 = document.getElementById('text4').value;
+
+                // テキスト描画スタイルを設定し、描画（HG創英角ポップ体を使用）
+                let ar1 = text1.split("\n");
+                ar1.forEach((el,i) => {
+                    ctx.font = "bold 35px Arial";
+                    ctx.fillStyle = "red";
+                    ctx.fillText(el, 45, 150 + i*50);   // テキスト1を位置 (50, 50) に描画
+                })
+
+                let ar2 = text2.split("\n");
+                ar2.forEach((el,i) => {
+                    ctx.font = "bold 20px Arial";
+                    ctx.fillStyle = "blue";
+                    ctx.fillText(el, 30, 270 + i*25);   // テキスト1を位置 (50, 50) に描画
+                })
+
+                let ar3 = text3.split("\n");
+                ar3.forEach((el,i) => {
+                    ctx.font = "bold 18px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.fillText(el, 130, 567 + i*19);   // テキスト1を位置 (50, 50) に描画
+                })
+                let ar4 = text4.split("\n");
+                ar4.forEach((el,i) => {
+                    ctx.font = "bold 18px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.fillText(el, 40, 630 + i*19);   // テキスト1を位置 (50, 50) に描画
+                })
+            }
+        }
     </script>
 </body>
-
 </html>
